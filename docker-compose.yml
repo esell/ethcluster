@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  bootnode:
+    build: bootnode
+    container_name: bootnode
+    hostname: bootnode
+    entrypoint: /root/start.sh
+    volumes:
+      - ./bootstrap:/root/bootstrap
+      - /etc/localtime:/etc/localtime:ro
+  membernode:
+    build: membernode
+    depends_on: 
+      - bootnode
+    entrypoint: /root/start.sh
+    volumes:
+      - ./bootstrap:/root/bootstrap
+      - /etc/localtime:/etc/localtime:ro
