@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 /geth init /root/bootstrap/genesis.json
 
