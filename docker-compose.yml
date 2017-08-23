@@ -9,9 +9,6 @@ services:
     volumes:
       - ./bootstrap:/root/bootstrap
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "8545:8545"
-      - "30303:30303"
   membernode:
     build: membernode
     depends_on: 
@@ -20,6 +17,9 @@ services:
     volumes:
       - ./bootstrap:/root/bootstrap
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8545:8545"
+      - "30303:30303"
   minernode:
     build: minernode
     depends_on:
